@@ -57,12 +57,11 @@ sed -i -e "s%^address = \"tcp://0.0.0.0:1317\"%address = \"tcp://0.0.0.0:${CUSTO
 
 agd config node tcp://localhost:${CUSTOM_PORT}57
 
-
 sudo tee /etc/systemd/system/agoricd.service > /dev/null << EOF
 [Unit]
 Description=Agoric node service
 After=network-online.target
-​
+
 [Service]
 Type=simple
 User=${USER}
@@ -70,7 +69,7 @@ ExecStart=$(which agd) start --home ${HOME}/.agoric
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
-​
+
 [Install]
 WantedBy=multi-user.target
 EOF
