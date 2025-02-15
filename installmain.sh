@@ -22,10 +22,10 @@ echo "export PATH=$PATH:/usr/local/go/bin:/usr/local/bin:$HOME/go/bin" >> $HOME/
 source $HOME/.bash_profile
 
 cd $HOME
-rm -rf agoric-upgrade-17
-git clone https://github.com/Agoric/agoric-sdk.git agoric-upgrade-18
-cd agoric-upgrade-18
-git checkout agoric-upgrade-18
+rm -rf agoric-upgrade-18
+git clone https://github.com/Agoric/agoric-sdk.git agoric-upgrade-18a
+cd agoric-upgrade-18a
+git checkout agoric-upgrade-18a
 
 yarn install && yarn build
 (cd packages/cosmic-swingset && make)
